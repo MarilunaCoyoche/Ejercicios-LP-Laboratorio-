@@ -1,3 +1,11 @@
+/*
+Crear clase estudiante con los atributos nombre, edad, código y notas, que me permita 
+ingresar cuantos estudiantes quiero añadir, agregar un array de objetos de los estudiantes 
+para llenar de su información en teclado, además que me permita ingresar en un menú que 
+me deje hacer consultas con una nota ejemplo y me muestre las notas registradas que sean
+compatibles con la consulta, en c++ sin usar vectores
+*/
+
 #include <iostream>
 #include <string>
 
