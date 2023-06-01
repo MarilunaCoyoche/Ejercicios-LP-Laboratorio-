@@ -75,6 +75,7 @@ class FabricaCirculo : public FabricaForma {
 public:
     unique_ptr<Forma> crearForma() const override {
         double radio;
+        cout << "CIRCULO"<< endl;
         cout << "Ingrese el radio del círculo: ";
         cin >> radio;
         return make_unique<Circulo>(radio);
@@ -86,6 +87,7 @@ class FabricaRectangulo : public FabricaForma {
 public:
     unique_ptr<Forma> crearForma() const override {
         double lado1, lado2;
+        cout << "RECTANGULO"<< endl;
         cout << "Ingrese el lado 1 del rectángulo: ";
         cin >> lado1;
         cout << "Ingrese el lado 2 del rectángulo: ";
@@ -99,6 +101,7 @@ class FabricaTriangulo : public FabricaForma {
 public:
     unique_ptr<Forma> crearForma() const override {
         double lado1, lado2, lado3;
+        cout << "TRUIANGULO"<< endl;
         cout << "Ingrese el lado 1 del triángulo: ";
         cin >> lado1;
         cout << "Ingrese el lado 2 del triángulo: ";
@@ -123,16 +126,24 @@ int main() {
         cout << i + 1 << ". ";
         unique_ptr<Forma> forma = fabricasFormas[i]->crearForma();
         cout << "Perímetro de la forma: " << forma->calcularPerimetro() << endl;
+        cout << "---------------------------------------------------------"<< endl;
+        cout << "---------------------------------------------------------"<< endl;
     }
 
     // Selección de opción
     size_t opcion;
+    cout << "MENU DE SELECCION:"<< endl;
+    cout << "---------------------------------------------------------"<< endl;
+    cout << "SELECCIONE 1 PARA REPETIR CIRCULO, ELIJA 2 PARA REPETIR RECTANGULO Y 3 PARA REPETIR EL TRIANGULO"<< endl;
+    cout << "---------------------------------------------------------"<< endl;
     cout << "Ingrese la opción: ";
     cin >> opcion;
+    cout << "---------------------------------------------------------"<< endl;
 
     if (opcion >= 1 && opcion <= fabricasFormas.size()) {
         unique_ptr<Forma> forma = fabricasFormas[opcion - 1]->crearForma();
         cout << "El perímetro es: " << forma->calcularPerimetro() << endl;
+        cout << "---------------------------------------------------------"<< endl;
     } else {
         cout << "Opción inválida.\n";
     }
@@ -149,3 +160,4 @@ int main() {
     cout << "----------------------------------------------"  << endl;
     return 0;
 }
+
